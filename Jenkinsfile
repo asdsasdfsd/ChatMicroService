@@ -10,6 +10,7 @@ pipeline {
         DOCKERHUB_REPO_CHATMICROSERVICE = 'sh-chatmicroservice' 
         DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'        // Docker Hub 凭证
         DOCKERHUB_USER = 'tigerwk'                             // Docker Hub 用户名
+        
     }
 
     stages {
@@ -29,7 +30,7 @@ pipeline {
 
         stage('Build ChatMicroService Docker Image') {
             steps {
-                
+
                 script {
                     dir('ChatMicroService') {
                         def chatMicroServiceImage = docker.build("${DOCKERHUB_USER}/${DOCKERHUB_REPO_CHATMICROSERVICE}:latest")
