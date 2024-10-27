@@ -5,7 +5,7 @@ RUN mkdir -p /var/log/xechat && \
     chmod 777 /var/log/xechat && \
     chmod 777 /xechat
 
-COPY target/${finalName}.jar /app.jar
+COPY target/xechat-1.2.jar /app.jar
 
 WORKDIR /
 
