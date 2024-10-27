@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK8'  
+        jdk 'jdk8'  
         maven 'Maven3'  
     }
 
@@ -10,7 +10,6 @@ pipeline {
         DOCKERHUB_REPO_CHATMICROSERVICE = 'sh-chatmicroservice' 
         DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'        // Docker Hub 凭证
         DOCKERHUB_USER = 'tigerwk'                             // Docker Hub 用户名
-        
     }
 
     stages {
