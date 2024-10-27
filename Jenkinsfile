@@ -20,20 +20,15 @@ pipeline {
         }
 
         stage('Build ChatMicroService') {
-            steps {
-                dir('ChatMicroService') {               
-                    sh 'mvn clean install -DskipTests'
-                }
+            steps {                         
+                sh 'mvn clean install -DskipTests'
             }
         }
 
         stage('Build ChatMicroService Docker Image') {
             steps {
-
                 script {
-                    dir('ChatMicroService') {
-                        def chatMicroServiceImage = docker.build("${DOCKERHUB_USER}/${DOCKERHUB_REPO_CHATMICROSERVICE}:latest")
-                    }
+                    def chatMicroServiceImage = docker.build("${DOCKERHUB_USER}/${DOCKERHUB_REPO_CHATMICROSERVICE}:latest")   
                 }
             }
         }
