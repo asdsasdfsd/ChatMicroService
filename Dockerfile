@@ -9,6 +9,6 @@ COPY target/xechat-1.2.jar /app.jar
 
 WORKDIR /
 
-EXPOSE 8082
+EXPOSE 8080
 
 CMD ["java", "-jar", "app.jar", "--spring.profiles.active=prod"]  
